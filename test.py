@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-from euler_methods import midpoint_ode, ralston  # hoặc tên file chứa hàm của bạn
+from p4 import midpoint_ode, ralston  # hoặc tên file chứa hàm của bạn
 
 def test_midpoint_basic():
     # Kiểm tra với bài toán cơ bản y' = y - x^2 + 1, y(0) = 0.5, [0, 2], h = 0.2 (n = 10)
