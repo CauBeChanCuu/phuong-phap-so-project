@@ -1,120 +1,110 @@
-# DỰ ÁN PHƯƠNG PHÁP SỐ
+# DỰ ÁN PHƯƠNG PHÁP SỐ – NHÓM 7
 
 ## 1. Giới thiệu
 
-Dự án được xây dựng nhằm cài đặt và minh họa một số phương pháp số dùng để giải gần đúng các bài toán toán học bằng Python.
+Dự án được thực hiện nhằm cài đặt, kiểm thử và đánh giá các phương pháp số sử dụng để giải gần đúng phương trình vi phân thường bằng ngôn ngữ lập trình Python.
 
-Nội dung tập trung vào các phương pháp Euler, Euler cải tiến và một số phương pháp Runge–Kutta bậc 2.
+Dự án tập trung vào phương pháp Euler, Euler cải tiến và các phương pháp Runge–Kutta bậc 2. Các thành viên phối hợp thực hiện mã nguồn, kiểm thử, thực nghiệm và xây dựng báo cáo.
 
 ## 2. Mục tiêu
 
-- Cài đặt các thuật toán bằng Python.
-- Tổ chức chương trình thành các tệp mã nguồn riêng biệt.
-- Kiểm tra chương trình bằng các ví dụ và bộ kiểm thử.
-- Tổng hợp lý thuyết, công thức và hướng dẫn sử dụng.
+- Cài đặt các phương pháp số bằng Python.
+- Tổ chức mã nguồn thành các tệp riêng biệt, dễ đọc và dễ quản lý.
+- Kiểm thử chương trình nhằm phát hiện lỗi và đánh giá kết quả.
+- Thực nghiệm, so sánh và nhận xét về các phương pháp số.
+- Tích hợp mã nguồn và tài liệu của các thành viên thành một sản phẩm thống nhất.
+- Hoàn thiện báo cáo và slide thuyết trình.
 
 ## 3. Cấu trúc dự án
 
-- `euler_methods.py`: Cài đặt phương pháp Euler và Euler cải tiến.
-- `test_euler_methods.py`: Các bài kiểm thử cho những phương pháp Euler.
-- `p4.py`: Cài đặt phương pháp điểm giữa (Midpoint) và Ralston.
-- `test.py`: Tệp kiểm tra các phương pháp trong `p4.py`.
-- `report_section.md`: Nội dung báo cáo về các phương pháp Euler.
-- `Báo cáo Phân tích Lý thuyết P4.md`: Tài liệu lý thuyết của phần P4.
-- `.gitignore`: Quy định những tệp không đưa lên Git.
+| Tệp | Chức năng |
+|---|---|
+| `euler_methods.py` | Cài đặt phương pháp Euler và Euler cải tiến. |
+| `test_euler_methods.py` | Kiểm thử các phương pháp Euler. |
+| `p4.py` | Cài đặt phương pháp Midpoint và Ralston. |
+| `test.py` | Kiểm thử các phương pháp trong `p4.py`. |
+| `report_section.md` | Báo cáo về các phương pháp Euler. |
+| `Báo cáo Phân tích Lý thuyết P4.md` | Tài liệu phân tích lý thuyết phần P4. |
+| `.gitignore` | Quy định các tệp và thư mục không đưa vào Git. |
+| `README.md` | Giới thiệu dự án, cấu trúc và hướng dẫn sử dụng. |
 
-## 4. Yêu cầu môi trường
+## 4. Công nghệ sử dụng
 
-- Python 3.
-- Thư viện NumPy nếu được sử dụng trong mã nguồn.
-- Thư viện pytest để chạy kiểm thử bằng pytest.
+- **Ngôn ngữ lập trình:** Python.
+- **Thư viện tính toán:** NumPy.
+- **Thư viện kiểm thử:** pytest.
+- **Môi trường phát triển:** Visual Studio Code.
+- **Quản lý mã nguồn:** GitHub và GitHub Desktop.
 
-Cài đặt các thư viện cần thiết bằng lệnh:
+## 5. Yêu cầu cài đặt
+
+Cài đặt Python 3 và các thư viện cần thiết.
+
+Mở Terminal tại thư mục dự án và chạy:
 
 ```bash
 python -m pip install numpy pytest
 ```
 
-## 5. Cách chạy chương trình
+Kiểm tra phiên bản Python:
 
-Mở Terminal tại thư mục gốc của dự án.
+```bash
+python --version
+```
 
-Chạy các phương pháp Euler:
+## 6. Hướng dẫn chạy chương trình
+
+### 6.1. Chạy chương trình Euler
 
 ```bash
 python euler_methods.py
 ```
 
-Chạy các phương pháp Midpoint và Ralston:
+### 6.2. Chạy chương trình Midpoint và Ralston
 
 ```bash
 python p4.py
 ```
 
-Chạy bộ kiểm thử Euler:
+### 6.3. Kiểm thử các phương pháp Euler
 
 ```bash
-python -m pytest -q test_euler_methods.py
+python -m pytest -v test_euler_methods.py
 ```
 
-Chạy kiểm thử các phương pháp P4:
+### 6.4. Kiểm thử các phương pháp trong P4
 
 ```bash
-python test.py
+python -m pytest -v test.py
 ```
 
-Lưu ý: Các lệnh trên cần được kiểm tra với mã nguồn thực tế của dự án. Không kết luận chương trình chạy đúng cho đến khi đã chạy thử thành công.
+Các lệnh chạy chương trình áp dụng khi tệp tương ứng có phần thực thi phù hợp. Kết quả cần được xác nhận bằng cách chạy trực tiếp trên môi trường thực tế.
 
-## 6. Các phương pháp số
+## 7. Nội dung chuyên môn
 
-### 6.1. Phương pháp Euler
+### 7.1. Phương pháp Euler
 
-Công thức:
+Phương pháp Euler được sử dụng để tính gần đúng nghiệm của phương trình vi phân thường. Nội dung cài đặt và kiểm thử được tổ chức trong các tệp liên quan.
 
-\[
-y_{i+1}=y_i+h f(x_i,y_i)
-\]
+### 7.2. Phương pháp Euler cải tiến
 
-Trong đó \(h\) là bước lưới.
+Phương pháp Euler cải tiến được triển khai nhằm nâng cao độ chính xác của kết quả xấp xỉ so với phương pháp Euler cơ bản trong những điều kiện phù hợp.
 
-### 6.2. Phương pháp Euler cải tiến
+### 7.3. Phương pháp Midpoint
 
-Phương pháp sử dụng thông tin tại điểm đầu và giá trị dự đoán tại điểm tiếp theo để cải thiện kết quả gần đúng.
+Phương pháp Midpoint là một phương pháp Runge–Kutta bậc 2, sử dụng thông tin tại điểm giữa của bước tính để xấp xỉ nghiệm.
 
-### 6.3. Phương pháp điểm giữa (Midpoint)
+### 7.4. Phương pháp Ralston
 
-\[
-k_1=h f(x_i,y_i)
-\]
+Phương pháp Ralston là một phương pháp Runge–Kutta bậc 2 khác, được triển khai và kiểm thử trong phần mã nguồn tương ứng.
 
-\[
-k_2=h f\left(x_i+\frac{h}{2},y_i+\frac{k_1}{2}\right)
-\]
+## 8. Kiểm thử và đánh giá
 
-\[
-y_{i+1}=y_i+k_2
-\]
+Dự án sử dụng pytest để tổ chức và thực hiện kiểm thử.
 
-### 6.4. Phương pháp Ralston
+Các nội dung kiểm thử bao gồm:
 
-\[
-k_1=h f(x_i,y_i)
-\]
-
-\[
-k_2=h f\left(x_i+\frac{3h}{4},y_i+\frac{3k_1}{4}\right)
-\]
-
-\[
-y_{i+1}=y_i+\frac{1}{3}k_1+\frac{2}{3}k_2
-\]
-
-## 7. Kiểm thử và đánh giá
-
-Các bộ kiểm thử được sử dụng để kiểm tra kết quả tính toán, cách xử lý dữ liệu đầu vào và hoạt động của các phương pháp số.
-
-Kết quả kiểm thử sẽ được cập nhật sau khi chạy chương trình và xử lý các lỗi phát sinh.
-
-## 8. Kết luận
-
-Dự án giúp minh họa cách áp dụng Python để triển khai các phương pháp số, đồng thời rèn luyện kỹ năng tổ chức mã nguồn, kiểm thử và viết tài liệu kỹ thuật.
+- Kiểm tra kết quả tính toán.
+- Kiểm tra cấu trúc và số lượng phần tử của dữ liệu đầu ra.
+- Kiểm tra cách xử lý đầu vào không hợp lệ.
+- Chạy lại các
