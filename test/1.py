@@ -1,7 +1,7 @@
 import pytest
 import numpy as np
 
-from ten_file_cua_ban import (
+from baitoanungdung import (
     logistic_rhs,
     logistic_exact,
     find_crossing_year,
