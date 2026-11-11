@@ -2,9 +2,9 @@ import pytest
 import numpy as np
 from p4 import midpoint_ode, ralston  # Giả sử code của bạn nằm trong file p4.py
 
-# ==========================================
+
 # 1. KIỂM THỬ NGOẠI LỆ (EDGE CASES)
-# ==========================================
+
 def test_edge_cases():
     """Kiểm tra xem hàm có ném ra lỗi ValueError khi đầu vào không hợp lệ không."""
     f = lambda x, y: y
@@ -20,9 +20,8 @@ def test_edge_cases():
     with pytest.raises(ValueError, match="Đầu mút khoảng.*không hợp lệ"):
         ralston(f, 2, 0, 1, 10)
 
-# ==========================================
 # 2. KIỂM THỬ ĐỘ CHÍNH XÁC CƠ BẢN (ACCURACY)
-# ==========================================
+
 def test_midpoint_basic():
     """Kiểm tra nghiệm xấp xỉ của Midpoint với bài toán y' = y - x^2 + 1."""
     f = lambda x, y: y - x**2 + 1
@@ -51,9 +50,7 @@ def test_ralston_basic():
     # Ta kiểm tra xem nó có sát nghiệm chính xác không.
     assert np.isclose(ys[-1], exact_y_at_2, atol=0.05)
 
-# ==========================================
 # 3. KIỂM THỬ BẬC HỘI TỤ O(h^2) (CONVERGENCE)
-# ==========================================
 def test_convergence_order():
     """
     Chứng minh thuật toán là RK2: 
