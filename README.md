@@ -117,8 +117,8 @@ có nghiệm đúng P(t) = K / (1 + (K/P0 - 1)·e^(-r·t)).
 Nhóm giải bằng bốn phương pháp với h = 1 và h = 0,5, xác định năm P vượt 8 triệu xe
 (theo nghiệm đúng, t xấp xỉ 11,95 năm), và thử h = 5, h = 8 với Euler để quan sát và giải thích hiện tượng.
 
-Kết quả chính: `<tóm tắt: năm P vượt 8 triệu theo từng phương pháp, nhận xét về h = 5 và h = 8>`.
-Chi tiết: `report/<tên file báo cáo ứng dụng>`, hình: `application/logistic_application_sv7.png`.
+Kết quả chính: Với h = 1 và h = 0.5, thời điểm lượng xe vượt 8 triệu theo 4 phương pháp đều bám sát nghiệm đúng (khoảng 11.95 năm). Khi lấy bước thời gian lớn, phương pháp Euler lộ rõ nhược điểm: h = 5 cho sai số lớn, đồ thị kém mượt; đặc biệt tại h = 8, nghiệm bị phân kỳ, đồ thị dao động mạnh và mất hoàn toàn tính ổn định. 
+Chi tiết: report/Bao_cao_ung_dung_SV7.pdf , hình: application/logistic_application_sv7.png .
 
 ## 9. Đối chiếu yêu cầu của đề
 
