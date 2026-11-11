@@ -1,7 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from euler_methods import euler, euler_improved
-from p4 import midpoint_ode, ralston
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from src.euler_heun import euler, euler_improved 
+from src.p4 import midpoint_ode, ralston
 
 # Phần của SV7: Bài toán ứng dụng mô hình logistic
 
