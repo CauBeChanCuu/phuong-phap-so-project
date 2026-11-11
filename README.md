@@ -136,6 +136,7 @@ Chi tiết: `report/<tên file báo cáo ứng dụng>`, hình: `application/log
 
 **Sử dụng AI** (theo mục 1.8 của đề):
 - Triệu Minh Hoàng: dùng Claude (Anthropic) để hướng dẫn thao tác Git/GitHub, gợi ý cấu trúc repo, soạn bản nháp `CONVENTIONS.md` và `README.md`, lập danh sách kiểm tra tích hợp. Nội dung đã được đọc lại và đối chiếu với đề, bài giảng: `<xác nhận hoặc chỉnh lại cho đúng thực tế>`.
+- Phạm Trung Hiếu : 
 - Các thành viên khác: `<mỗi người tự ghi: có dùng AI hay không, vào việc gì>`.
 
 **Tài liệu tham khảo:**
