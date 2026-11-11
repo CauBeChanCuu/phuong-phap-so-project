@@ -13,7 +13,7 @@ y' = f(x, y), y(a) = y0 trên đoạn [a, b]: **Euler**, **Euler cải tiến (H
 | Họ tên | MSSV | GitHub | Phân công ban đầu | Đóng góp thực tế |
 |---|---|---|---|---|
 | Phan Thị Hương Giang | `<mssv: 243003889>` | `<tài khoản>` | Euler, Euler cải tiến | `Euler- Huen.py`, `pseudocode.md`, |
-| Lê Đức Anh | `<mssv: 243024440>` | `<tài khoản>` | RK2, điểm giữa, Ralston | `P3,P4 Lê Đức Anh.py` |
+| Lê Đức Anh | `<mssv: 243024440>` | `<tài khoản>` | RK2, điểm giữa, Ralston | `p3,p4.py` |
 | Nguyễn Việt Dũng | `<mssv>` | `<tài khoản>` | Bài toán ứng dụng | `<file, commit>` |
 | Phạm Trung Hiếu | `<mssv>` | `<tài khoản>` | Kiểm thử cho cả nhóm, kiểm thử chéo cho nhóm cặp đôi | `<file, commit>` |
 | Triệu Minh Hoàng | `<mssv>` | `<tài khoản>` | Tạo repo, chuẩn mã, tích hợp, README, báo cáo, slide | `CONVENTIONS.md`, `README.md`, tích hợp repo, `<báo cáo, slide>` |
