@@ -13,7 +13,7 @@ y' = f(x, y), y(a) = y0 trên đoạn [a, b]: **Euler**, **Euler cải tiến (H
 | Họ tên | MSSV | GitHub | Phân công ban đầu | Đóng góp thực tế |
 |---|---|---|---|---|
 | Phan Thị Hương Giang | `<mssv: 243003889>` | `<tài khoản>` | Euler, Euler cải tiến | `Euler- Huen.py`, `pseudocode.md`, |
-| Lê Đức Anh | `<mssv>` | `<tài khoản>` | RK2, điểm giữa, Ralston | `<file, commit>` |
+| Lê Đức Anh | `<mssv: 243024440>` | `<tài khoản>` | RK2, điểm giữa, Ralston | `P3,P4 Lê Đức Anh.py` |
 | Nguyễn Việt Dũng | `<mssv>` | `<tài khoản>` | Bài toán ứng dụng | `<file, commit>` |
 | Phạm Trung Hiếu | `<mssv>` | `<tài khoản>` | Kiểm thử cho cả nhóm, kiểm thử chéo cho nhóm cặp đôi | `<file, commit>` |
 | Triệu Minh Hoàng | `<mssv>` | `<tài khoản>` | Tạo repo, chuẩn mã, tích hợp, README, báo cáo, slide | `CONVENTIONS.md`, `README.md`, tích hợp repo, `<báo cáo, slide>` |
@@ -137,6 +137,7 @@ Chi tiết: report/Bao_cao_ung_dung_SV7.pdf , hình: application/logistic_applic
 **Sử dụng AI** (theo mục 1.8 của đề):
 - Triệu Minh Hoàng: dùng Claude (Anthropic) để hướng dẫn thao tác Git/GitHub, gợi ý cấu trúc repo, soạn bản nháp `CONVENTIONS.md` và `README.md`, lập danh sách kiểm tra tích hợp. Nội dung đã được đọc lại và đối chiếu với đề, bài giảng: `<xác nhận hoặc chỉnh lại cho đúng thực tế>`.
 - Phạm Trung Hiếu : dùng AI để kiểm thử
+- Lê Đức Anh: dùng AI để code, test
 - Các thành viên khác: `<mỗi người tự ghi: có dùng AI hay không, vào việc gì>`.
 
 **Tài liệu tham khảo:**
