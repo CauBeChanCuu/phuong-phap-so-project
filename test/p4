@@ -1,7 +1,6 @@
 import pytest
 import numpy as np
-from p4 import midpoint_ode, ralston  # Giả sử code của bạn nằm trong file p4.py
-
+from p4 import midpoint_ode, ralston
 
 # 1. KIỂM THỬ NGOẠI LỆ (EDGE CASES)
 
