@@ -15,7 +15,7 @@ y' = f(x, y), y(a) = y0 trên đoạn [a, b]: **Euler**, **Euler cải tiến (H
 | Phan Thị Hương Giang | `<mssv: 243003889>` | `<tài khoản>` | Euler, Euler cải tiến | `Euler- Huen.py`, `pseudocode.md`, |
 | Lê Đức Anh | `<mssv: 243024440>` | `<tài khoản>` | RK2, điểm giữa, Ralston | `p3,p4.py` |
 | Nguyễn Việt Dũng | `<mssv>` | `<tài khoản>` | Bài toán ứng dụng | `<file, commit>` |
-| Phạm Trung Hiếu | `<mssv>` | `<tài khoản>` | Kiểm thử cho cả nhóm, kiểm thử chéo cho nhóm cặp đôi | `<file, commit>` |
+| Phạm Trung Hiếu | `<mssv>` | `<tài khoản>` | Kiểm thử cho cả nhóm, kiểm thử chéo cho nhóm cặp đôi | `test_btud,test_euler,heun,test_p3,p4` |
 | Triệu Minh Hoàng | `<mssv>` | `<tài khoản>` | Tạo repo, chuẩn mã, tích hợp, README, báo cáo, slide | `CONVENTIONS.md`, `README.md`, tích hợp repo, `<báo cáo, slide>` |
 | Nguyễn Đức Trường | `<mssv>` | `<tài khoản>` | Thực nghiệm so sánh, nhận xét | `<file, commit>` |
 | Vũ Minh Thành | `<mssv>` | `<tài khoản>` | Không tham gia (theo bảng phân công của nhóm) | - |
