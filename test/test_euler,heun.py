@@ -1,7 +1,7 @@
 #test euler
 import pytest
 import numpy as np
-from src/euler_heun import euler
+from src.euler_heun import euler
 
 def test_euler_edge_cases():
     f = lambda x, y: y
@@ -29,9 +29,11 @@ def test_euler_convergence_order():
     ratio = abs(exact_val - ys_10[-1]) / abs(exact_val - ys_100[-1])
     assert 8 < ratio < 12
     import pytest
-    # test heun
+
+# test heun
+
 import numpy as np
-from src/euler_heun import euler_improved
+from src.euler_heun import euler_improved
 
 def test_euler_improved_edge_cases():
     f = lambda x, y: y
