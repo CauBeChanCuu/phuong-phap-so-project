@@ -1,7 +1,7 @@
 # TEST P4
 import pytest
 import numpy as np
-from P3,P4 import midpoint_ode, ralston, rk2
+from src.P3,P4 import midpoint_ode, ralston, rk2
 
 def test_midpoint_basic():
     """Kiểm tra phương pháp Điểm giữa với bài toán y' = y - x^2 + 1, y(0) = 0.5 trên [0, 2], h = 0.2."""
@@ -56,7 +56,7 @@ def test_edge_cases_and_exceptions():
 #TEST P3
 import pytest
 import numpy as np
-from P3,P4 import rk2
+from src.P3,P4 import rk2
 
 
 def test_rk2_lecture_example():
