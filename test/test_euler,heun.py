@@ -1,7 +1,7 @@
 #test euler
 import pytest
 import numpy as np
-from src/euler_heun.py import euler
+from src/euler_heun import euler
 
 def test_euler_edge_cases():
     f = lambda x, y: y
@@ -31,7 +31,7 @@ def test_euler_convergence_order():
     import pytest
     # test heun
 import numpy as np
-from src/euler_heun.py import euler_improved
+from src/euler_heun import euler_improved
 
 def test_euler_improved_edge_cases():
     f = lambda x, y: y
