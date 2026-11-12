@@ -1,7 +1,7 @@
 import pytest
 import numpy as np
 
-from baitoanungdung import (
+from application.baitoanungdung import (
     logistic_rhs,
     logistic_exact,
     find_crossing_year,
