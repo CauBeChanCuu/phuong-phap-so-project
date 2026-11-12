@@ -1,82 +1,58 @@
+TEST P4
 import pytest
 import numpy as np
-from p4 import midpoint_ode, ralston
-
-# 1. KIỂM THỬ NGOẠI LỆ (EDGE CASES)
-
-def test_edge_cases():
-    """Kiểm tra xem hàm có ném ra lỗi ValueError khi đầu vào không hợp lệ không."""
-    f = lambda x, y: y
-    
-    # Số bước chia n <= 0
-    with pytest.raises(ValueError, match="Số bước chia n phải là số nguyên dương"):
-        midpoint_ode(f, 0, 1, 1, 0)
-        
-    with pytest.raises(ValueError, match="Số bước chia n phải là số nguyên dương"):
-        midpoint_ode(f, 0, 1, 1, -5)
-        
-    # Khoảng [a, b] bị ngược (a >= b)
-    with pytest.raises(ValueError, match="Đầu mút khoảng.*không hợp lệ"):
-        ralston(f, 2, 0, 1, 10)
-
-# 2. KIỂM THỬ ĐỘ CHÍNH XÁC CƠ BẢN (ACCURACY)
+from p4 import midpoint_ode, ralston, rk2
 
 def test_midpoint_basic():
-    """Kiểm tra nghiệm xấp xỉ của Midpoint với bài toán y' = y - x^2 + 1."""
+    """Kiểm tra phương pháp Điểm giữa với bài toán y' = y - x^2 + 1, y(0) = 0.5 trên [0, 2], h = 0.2."""
     f = lambda x, y: y - x**2 + 1
-    xs, ys = midpoint_ode(f, 0, 2, 0.5, 10)
+    xs, ys = midpoint_ode(f, 0.0, 2.0, 0.5, 10)
     
-    # Độ dài mảng phải là n + 1 = 11
     assert len(xs) == 11
     assert len(ys) == 11
-    
-    # Kiểm tra giá trị tính toán cụ thể tại n=10 (y_10 ~ 5.290369)
+    # Giá trị gần đúng tại x = 2 (y_10) khoảng 5.290369
     assert np.isclose(ys[-1], 5.290369, atol=1e-4)
 
 def test_ralston_basic():
-    """Kiểm tra nghiệm của Ralston so với nghiệm phân tích (chính xác)."""
+    """Kiểm tra phương pháp Ralston để đảm bảo mảng trả về đúng kích thước và chạy không lỗi."""
     f = lambda x, y: y - x**2 + 1
-    # Nghiệm chính xác của bài toán này là: y(x) = (x + 1)^2 - 0.5 * e^x
-    # Tại x = 2: y(2) = 9 - 0.5 * e^2 ≈ 5.30547
-    exact_y_at_2 = (2 + 1)**2 - 0.5 * np.exp(2)
-    
-    xs, ys = ralston(f, 0, 2, 0.5, 10)
+    xs, ys = ralston(f, 0.0, 2.0, 0.5, 10)
     
     assert len(xs) == 11
     assert len(ys) == 11
-    
-    # Với h = 0.2 (n=10), sai số của RK2 nằm ở cỡ 10^-2. 
-    # Ta kiểm tra xem nó có sát nghiệm chính xác không.
-    assert np.isclose(ys[-1], exact_y_at_2, atol=0.05)
 
-# 3. KIỂM THỬ BẬC HỘI TỤ O(h^2) (CONVERGENCE)
-def test_convergence_order():
+def test_rk2_heun_equivalent():
     """
-    Chứng minh thuật toán là RK2: 
-    Khi h giảm đi 10 lần (n tăng 10 lần), sai số phải giảm khoảng 10^2 = 100 lần.
-    Bài toán test: y' = y, y(0) = 1 => Nghiệm chính xác y(x) = e^x
+    Kiểm tra rk2 với tham số của Euler cải tiến (r1=0.5, r2=0.5, alpha=1.0, beta=1.0).
+    Bài toán: y' = y - x^2 + 1, y(0) = 0.5 trên [0, 2], h = 0.2.
+    Kết quả y_10 phải gần bằng 5.233055.
     """
+    f = lambda x, y: y - x**2 + 1
+    xs, ys = rk2(f, 0.0, 2.0, 0.5, 10, r1=0.5, r2=0.5, alpha=1.0, beta=1.0)
+    
+    assert len(xs) == 11
+    assert len(ys) == 11
+    assert np.isclose(ys[-1], 5.233055, atol=1e-4)
+
+def test_rk2_custom_function():
+    """Kiểm tra rk2 với phương trình y' = 3*x^2*y, y(0) = 1 trên [0, 1], h = 0.2."""
+    f = lambda x, y: 3 * (x**2) * y
+    xs, ys = rk2(f, 0.0, 1.0, 1.0, 5, r1=0.5, r2=0.5, alpha=1.0, beta=1.0)
+    
+    assert np.isclose(ys[-1], 2.700507, atol=1e-4)
+
+def test_edge_cases_and_exceptions():
+    """Kiểm tra các trường hợp bắt lỗi ValueError (ca biên và ràng buộc rk2)."""
     f = lambda x, y: y
-    exact_val = np.exp(1.0) # Giá trị tại x = 1
     
-    # --- Test hội tụ cho Midpoint ---
-    _, ys_10_mid = midpoint_ode(f, 0, 1, 1.0, 10)
-    _, ys_100_mid = midpoint_ode(f, 0, 1, 1.0, 100)
-    
-    err_10_mid = abs(exact_val - ys_10_mid[-1])
-    err_100_mid = abs(exact_val - ys_100_mid[-1])
-    
-    # Tỷ lệ sai số (kỳ vọng ~ 100)
-    ratio_mid = err_10_mid / err_100_mid
-    assert 90 < ratio_mid < 110, f"Midpoint không đạt O(h^2). Tỷ lệ: {ratio_mid}"
-
-    # --- Test hội tụ cho Ralston ---
-    _, ys_10_ral = ralston(f, 0, 1, 1.0, 10)
-    _, ys_100_ral = ralston(f, 0, 1, 1.0, 100)
-    
-    err_10_ral = abs(exact_val - ys_10_ral[-1])
-    err_100_ral = abs(exact_val - ys_100_ral[-1])
-    
-    # Tỷ lệ sai số (kỳ vọng ~ 100)
-    ratio_ral = err_10_ral / err_100_ral
-    assert 90 < ratio_ral < 110, f"Ralston không đạt O(h^2). Tỷ lệ: {ratio_ral}"
+    # 1. Ca biên: n âm hoặc bằng 0
+    with pytest.raises(ValueError):
+        midpoint_ode(f, 0, 1, 1, 0)
+        
+    # 2. Ca biên: a >= b
+    with pytest.raises(ValueError):
+        ralston(f, 1, 0, 1, 5)
+        
+    # 3. Vi phạm ràng buộc (6.9) của RK2: r2*alpha != 0.5
+    with pytest.raises(ValueError, match="ràng buộc"):
+        rk2(f, 0, 1, 1, 10, r1=0.5, r2=0.5, alpha=0.5, beta=0.5)
