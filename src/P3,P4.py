@@ -5,11 +5,11 @@ Runge–Kutta bậc 2 tổng quát (công thức 6.8).
 Kiểm tra ràng buộc (6.9) trước khi tính.
 Parameters
 ----------
-alpha, beta : float -- tham sốbước phụ
-f : callable -- hàm vếphải f(x, y)
+alpha, beta : float -- tham số bước phụ
+f : callable -- hàm vế phải f(x, y)
 a, b : float -- cận tích phân
 y0 : float -- giá trị ban đầu y(a)
-n : int -- sốbước chia
+n : int -- số bước chia
 r1, r2 : float -- trọng số
 Returns
 -------
